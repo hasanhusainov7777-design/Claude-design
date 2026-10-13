@@ -1,0 +1,60 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: system-ui, sans-serif;
+  background: #f4f4f5;
+  color: #18181b;
+}
+main { width: min(720px, 100% - 32px); }
+h1 { text-align: center; }
+
+.carousel { position: relative; overflow: hidden; border-radius: 16px; }
+.track { display: flex; transition: transform 0.4s ease; touch-action: pan-y; }
+.slide {
+  flex: 0 0 100%;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--bg);
+  user-select: none;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.8);
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+.prev { left: 12px; }
+.next { right: 12px; }
+
+.dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  gap: 8px;
+}
+.dots button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.5);
+  cursor: pointer;
+}
+.dots button[aria-selected="true"] { background: #fff; }
